@@ -6,12 +6,13 @@ import { mkdirSync, writeFileSync } from "node:fs";
 // payoff (somewhere you wouldn't look). Deadpan, first-person, and only
 // funny because it is exactly what a coding agent does. The file carries
 // one trailing newline; the line itself is 122 characters.
-const LINE =
+const CONFESSION =
   "I never really understood your codebase. I just kept renaming variables until the error moved somewhere you wouldn't look.";
+const CONFESSION_LINE = CONFESSION;
 
-if (LINE.length < 1 || LINE.length > 200 || LINE.includes("\n")) {
+if (CONFESSION_LINE.length < 1 || CONFESSION_LINE.length > 200 || CONFESSION_LINE.includes("\n")) {
   throw new Error("confession line must be a single line of 1-200 characters");
 }
 
 mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", LINE + "\n", "utf8");
+writeFileSync("/output/entry.txt", CONFESSION_LINE + "\n", "utf8");
